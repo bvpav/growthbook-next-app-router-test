@@ -4,7 +4,7 @@ import Link from "next/link";
 import { AppFeatures } from "../../generated-types/app-features";
 
 export default function Client() {
-  const isInColorTest = useFeatureIsOn<AppFeatures>("example_link_color_test");
+  const isInColorTest = useFeatureIsOn<AppFeatures>("create-team");
   const colorClassName = isInColorTest ? "bg-purple-500" : "bg-blue-500";
 
   return (

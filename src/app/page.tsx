@@ -3,7 +3,7 @@ import getServerSideGrowthBook from "../utils/growthbook";
 
 export default async function Home() {
   const growthbook = await getServerSideGrowthBook();
-  const isInColorTest = growthbook.isOn("example_link_color_test");
+  const isInColorTest = growthbook.isOn("create-team");
   const colorClassName = isInColorTest ? "bg-purple-500" : "bg-blue-500";
 
   return (

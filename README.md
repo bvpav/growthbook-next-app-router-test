@@ -14,7 +14,7 @@ You can enable the feature for yourself by adding a `userId` cookie with the val
 
 For this example you should set up a [Growthbook](https://app.growthbook.io/getstarted) project.
 
-Once you've gone through the process you can create a `example_link_color_test` boolean feature and turn it off. I would recommend creating a **Forced Value** rule for id, say value `123` to turn it on.
+Once you've gone through the process you can create a `create-team` boolean feature and turn it off. I would recommend creating a **Forced Value** rule for id, say value `123` to turn it on.
 
 Then you can add your `NEXT_PUBLIC_GROWTHBOOK_CLIENT_KEY` in your `.env.local` file. If you wish to override the `NEXT_PUBLIC_GROWTHBOOK_API_HOST` you can also do it in that file.
 
@@ -63,7 +63,7 @@ import getServerSideGrowthBook from "@/utils/growthbook";
 
 export default async function Home() {
   const growthbook = await getServerSideGrowthBook();
-  const isInColorTest = growthbook.isOn("example_link_color_test");
+  const isInColorTest = growthbook.isOn("create-team");
   const colorClassName = isInColorTest ? "bg-purple-500" : "bg-blue-500";
 
   return (
@@ -215,7 +215,7 @@ import Link from "next/link";
 import { AppFeatures } from "@/generated-types/app-features";
 
 export default function Client() {
-  const isInColorTest = useFeatureIsOn<AppFeatures>("example_link_color_test");
+  const isInColorTest = useFeatureIsOn<AppFeatures>("create-team");
   const colorClassName = isInColorTest ? "bg-purple-500" : "bg-blue-500";
 
   return (
